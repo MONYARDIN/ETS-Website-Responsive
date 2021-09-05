@@ -89,19 +89,15 @@ var swiperProyectos = new Swiper(".swiperProyectos", {
 
 /*============================ SCROLL REVEAL ANIMATION =========================*/
 const sr= ScrollReveal({
-  distance: '60px',
-  duration: 2000,
+  distance: '100px',
+  duration: 1500,
   reset: true,
 })
 
-sr.reveal(` .navbar`,{
-  origin:'top',
-  interval: 100,
-})
 
-sr.reveal(`.main, .flayerCurso, .Instalaciones, .Proyectos, .partner_logo, .map, .Datos,pFooter`,{
-  origin: 'bottom',
-  interval: 100,
+sr.reveal(`.main, .flayerCurso, .swiper, .Proyectos, .partner_logo, .map, .Datos, .navbar`,{
+  origin: 'top',
+  interval: 50,
 })
 
 sr.reveal(`.social`,{
