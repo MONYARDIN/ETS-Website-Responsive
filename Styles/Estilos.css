@@ -1,0 +1,623 @@
+/*GENERALES*/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+
+}
+body {
+  margin: 0;
+  padding: 0;
+  background: #000;
+}
+html {
+  scroll-behavior: smooth;
+}
+
+.content::-webkit-scrollbar {
+  /* solo oculta su visualizacion */
+  display: none;
+}
+section {
+  height: 100%;
+}
+
+section h1 {
+  padding-top: 75px;
+  font-size: 2em;
+  color: #fff;
+}
+
+h1::selection {
+  background: rgba(0, 0, 0, 0);
+}
+h2{
+  color: #fff;
+}
+#contenedor{
+  width: 80%;
+}
+p{
+  color: #fff;
+}
+
+/*BARRA DE NAVEGACIÓN*/
+.header .navbar {
+  background-color: rgba(0, 0, 0, 0.75) !important;
+  z-index: 2000;
+  width: 100vw;
+}
+
+.nav-link {
+  font-size: 15px;
+  margin: 5px;
+  color: #fff;
+  text-shadow: black 0.1em 0.1em 0.2em;
+}
+
+nav div ul li a{
+	padding: 1rem 0;
+	margin: 0 2rem;
+	position: relative;
+}
+nav div ul li a::before,
+nav div ul li a::after{
+	content: '';
+	position: absolute;
+	width: 100%;
+	height: 2px;
+	background-color: #acc31a;
+	left: 0;
+	transform: scaleX(0);
+	transition: all .5s;
+}
+
+nav div ul li a::before{
+	top: 0;
+	transform-origin: left;
+}
+
+nav div ul li a::after{
+	bottom: 0;
+	transform-origin: right;
+}
+
+.overlay{
+	background-color: rgba(0,0,0,.95);
+	position: fixed;
+	right: 0;
+	left: 0;
+	top: 0;
+	bottom: 0;
+	transition: opacity 650ms;
+	transform: scale(0);
+	opacity: 0;
+  display: none;
+}
+
+nav div ul li a:not(.liste):hover::before,
+nav div ul li a:not(.liste):hover::after{
+	transform: scaleX(1);
+}
+
+
+/*FONDO DE PARTÍCULAS*/
+#particles-js {
+  height: 100vh;
+  width: 100%;
+  position: fixed;
+  z-index: -100;
+}
+
+/*CAROUSEL PRINCIPAL*/
+.main{
+  position: relative;
+  top: 7rem;
+  width: 80%;
+  height: auto;
+}
+
+.Instalaciones{
+  position: relative;
+  top: 1rem;
+  width: 60%;
+  height: auto;
+  
+}
+
+.Proyectos{
+  position: relative;
+  top: 1rem;
+  width: 50%;
+  height: auto;
+}
+.swiper {
+  width: 100%;
+  height: 100%;
+  border-radius: 15px;
+  border: 1.5px solid rgba(255,255,255,.4);
+}
+
+.swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  background: #fff;
+
+  /* Center slide text vertically */
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+}
+
+.swiper-slide img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.swiper-content{
+  position: absolute;
+  width: 40%;
+  height: 100%;
+  right: 0;
+  background-color: rgba(0, 0, 0, .75);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  row-gap: 1.5rem;
+  padding: 20px;
+}
+
+
+
+/*BARRA DE REDES SOCIALES*/
+.social {
+  position: fixed; /* Hacemos que la posición en pantalla sea fija para que siempre se muestre en pantalla*/
+  left: 0; /* Establecemos la barra en la izquierda */
+  top: 280px; /* Bajamos la barra 200px de arriba a abajo */
+  z-index: 2000; /* Utilizamos la propiedad z-index para que no se superponga algún otro elemento como sliders, galerías, etc */
+}
+.social ul {
+  list-style: none;
+}
+.social ul li a {
+  width: 80px;
+  display: inline-block;
+  color: #fff;
+  background: #000;
+  padding: 10px 20px;
+  text-decoration: none;
+  -webkit-transition: all 500ms ease;
+  -o-transition: all 500ms ease;
+  transition: all 500ms ease; /* Establecemos una transición a todas las propiedades */
+  border-radius: 0px 5px 5px 0px;
+}
+.social ul li .socialIcon {
+  background: rgba(0, 0, 0, 0.4);
+  border-top: 1px solid rgba(255, 255, 255, .1);
+  border-right: 1px solid rgba(255, 255, 255, .1);
+  border-bottom: 1px solid rgba(255, 255, 255, .1);
+}
+.social ul li .icon-facebook:hover {
+  background: #3b5998;
+  padding: 10px 40px;
+}
+
+.social ul li .icon-twitter:hover {
+  background: #00abf0;
+  padding: 10px 40px;
+}
+
+.social ul li .icon-whatsapp:hover {
+  background: #00bb2d;
+  padding: 10px 40px;
+}
+
+.social ul li .icon-instagram:hover {
+  background: #f09433;
+  background: -moz-linear-gradient(
+    45deg,
+    #f09433 0%,
+    #e6683c 25%,
+    #dc2743 50%,
+    #cc2366 75%,
+    #bc1888 100%
+  );
+  background: -webkit-linear-gradient(
+    45deg,
+    #f09433 0%,
+    #e6683c 25%,
+    #dc2743 50%,
+    #cc2366 75%,
+    #bc1888 100%
+  );
+  background: linear-gradient(
+    45deg,
+    #f09433 0%,
+    #e6683c 25%,
+    #dc2743 50%,
+    #cc2366 75%,
+    #bc1888 100%
+  );
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f09433', endColorstr='#bc1888',GradientType=1 );
+  padding: 10px 40px;
+}
+
+.social ul li .icon-youtube:hover {
+  background: #c4302b;
+  padding: 10px 40px;
+}
+
+/*CURSOS Y CERTIFICACIONES*/
+#containerCurso{
+  position: relative;
+  width: 85%;
+  height: auto;
+  background-color: rgba(0, 0, 0, 0.3);
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-content: center;
+  -ms-flex-line-pack: center;
+  align-content: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  border-radius: 5px 5px 5px 5px;
+  -moz-border-radius: 5px 5px 5px 5px;
+  -webkit-border-radius: 5px 5px 5px 5px;
+  border: 1px solid rgba(136, 106, 106, 0.5);
+}
+.containerFlayers{
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  grid-column-gap: 25px;
+  grid-row-gap: 15px;
+}
+
+.flayerCurso img{
+  width: 15rem;
+  height: auto;
+  transform: scale(1);
+  transition: all 0.5s ease;
+}
+
+.flayerCurso:hover{
+  transform: scale(1.05);
+  box-shadow: 0 4px 16px rgba(255,255,255,.4);
+  transition: all 0.5s ease;
+}
+
+/* PARTNERS*/
+#cPartners{
+  position: relative;
+  width: 85%;
+  height: auto;
+  background-color: rgba(0, 0, 0, 0.3);
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-content: center;
+  -ms-flex-line-pack: center;
+  align-content: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  border-radius: 5px 5px 5px 5px;
+  -moz-border-radius: 5px 5px 5px 5px;
+  -webkit-border-radius: 5px 5px 5px 5px;
+  border: 1px solid rgba(136, 106, 106, 0.5);
+}
+.containerLogos{
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  grid-column-gap: 90px;
+  grid-row-gap: 90px;
+  padding: 50px;
+}
+.partner_logo img{
+  width: 12rem;
+  height: auto;
+  transform: scale(1);
+  transition: all 0.4s ease;
+}
+
+.partner_logo:hover{
+  transform: scale(1.05);
+  transition: all 0.4s ease;
+}
+
+
+/*CONTACTO*/
+
+.containerMap{
+  display: flex;
+  top: 1rem;
+  position: relative;
+  width: 85vw;
+  height: auto;
+  position: relative;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-content: center;
+  -ms-flex-line-pack: center;
+  align-content: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  border-radius: 10px 10px 10px 10px;
+  -moz-border-radius: 10px 10px 10px 10px;
+  -webkit-border-radius: 10px 10px 10px 10px;
+  border: 1px solid rgba(255,255,255,.4);
+}
+#GoogleMaps{
+  display: flex;
+  width: 100%;
+  height: 100%;
+  border-radius: 10px 10px 10px 10px;
+  -moz-border-radius: 10px 10px 10px 10px;
+  -webkit-border-radius: 10px 10px 10px 10px;
+}
+
+.map{
+  position: relative;
+  width: 100vw;
+  height: 70vh;
+  border-radius: 10px 10px 10px 10px;
+  -moz-border-radius: 10px 10px 10px 10px;
+  -webkit-border-radius: 10px 10px 10px 10px;
+}
+
+.Datos{
+  position: absolute;
+  right: 0;
+  width: 25vw;
+  height: 100%;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-content: center;
+  -ms-flex-line-pack: center;
+  align-content: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  border: 0.5px solid rgba(255, 255, 255, 0.1);
+  background-color: rgba(0, 0, 0, 0.85);
+  border-radius: 0px 10px 10px 0px;
+  -moz-border-radius: 0px 10px 10px 0px;
+  -webkit-border-radius: 0px 10px 10px 0px;
+}
+#metro{
+  width: 30px;
+  height: auto;
+}
+.Datos ul{
+  list-style: none;
+  margin-left: 10px;
+}
+.Datos li{
+  margin: 30px 30px 30px 30px;
+  text-decoration: none;
+}
+.fa-map-marker-alt{
+  color: red;
+  font-size: 25px;
+}
+.fa-phone-alt{
+  color: rgb(7, 42, 94);
+  font-size: 25px;
+}
+.fa-envelope{
+  color: rgb(255, 219, 59);
+  font-size: 25px;
+}
+#whatsappContacto{
+  color: #00bb2d;
+  font-size: 25px;
+}
+.fa-user-clock{
+  color: #ffc;
+  font-size: 25px;
+}
+
+
+
+
+/*FOOTER*/
+footer{
+  margin-top: 50px;
+  height: 50px;
+  background-color: rgba(0, 0, 0, .25);
+}
+
+
+
+.pFooter{
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-content: center;
+  -ms-flex-line-pack: center;
+  align-content: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  position: relative;
+  top: 20px;
+}
+
+@media screen and (max-width: 375px){
+  body h1{
+    font-size: 1.5rem;
+  }
+  .social {
+    display: none;
+  }
+  
+  .main{
+    width: 95vw;
+  }
+  .swiper-content{
+    width: 50%;
+  }
+  .swiper-content h2{
+    font-size: .7rem;
+  }
+  .swiper-content p{
+    font-size: .5rem;
+  }
+  #containerCurso{
+    position: relative;
+    width: 95vw;
+    height: auto;
+  }
+  .containerFlayers{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(6, 1fr);
+    grid-column-gap: 15px;
+    grid-row-gap: 15px;
+  }
+  
+  .flayerCurso img{
+    width: 10rem;
+    height: auto;
+  }
+
+  .Instalaciones{
+    width: 95vw;
+  }
+  .Proyectos{
+    width: 95vw;
+  }
+
+  #cPartners{
+    position: relative;
+    width: 95vw;
+    height: auto;
+  }
+  .containerLogos{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    grid-column-gap: 35px;
+    grid-row-gap: 15px;
+  }
+  .partner_logo img{
+    width: 7rem;
+  }
+  .containerMap{
+    width: 95vw;
+    height: auto;
+  }
+  #GoogleMaps{
+    display: block;
+    width: 100%;
+    height: 100%;
+    border-radius: 10px 10px 0px 0px;
+  }
+  .map{
+    position: relative;
+    width: 100vw;
+    height: 50vh;
+  }
+  #metro{
+    width: 13px;
+    height: auto;
+  }
+  .Datos{
+    position: relative;
+    width: 100%;
+    height: 50vh;
+    border-radius: 0px 0px 10px 10px;
+  }
+  .Datos li{
+    margin: 10px 10px 10px 10px;
+    text-decoration: none;
+    font-size: .85rem;
+  }
+  .fa-map-marker-alt{
+    color: red;
+    font-size: .85rem;
+  }
+  .fa-phone-alt{
+    color: rgb(7, 42, 94);
+    font-size: .85rem;
+  }
+  .fa-envelope{
+    color: rgb(255, 219, 59);
+    font-size: 13px;
+  }
+  #whatsappContacto{
+    color: #00bb2d;
+    font-size: .85rem;
+  }
+  .fa-user-clock{
+    color: #ffc;
+    font-size: .85rem;
+  }
+
+  .pFooter p{
+    font-size: .5rem;
+  }
+}
